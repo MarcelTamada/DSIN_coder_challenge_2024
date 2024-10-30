@@ -1,3 +1,5 @@
+import re
+
 def seq_action(a):
     acao = str(dici_matriz[int(a)])
     return acao
@@ -57,7 +59,7 @@ codigo = '81955518862776296'
 for i in codigo:
     realizar_acao += seq_action(i)
 
-realizar_acao = realizar_acao.replace('[', '').replace(']', ',').replace(' ', '').replace(',', '').replace(' ', '')
+realizar_acao = re.sub(r'[\[\],\s]', '', realizar_acao)
 print(f'Código: {codigo}')
 print(f'Sequencia de ações: {realizar_acao}')
 print(f'Matriz original:')
