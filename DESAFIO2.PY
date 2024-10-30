@@ -6,24 +6,20 @@ def seq_action(a):
 
 def troca_cor(l, c):
     indice_novo = 0
-    #print(f'Cor da posição da matriz [{l},{c}]: {matriz[l][c]}')
     indice_novo = seq(matriz[l][c])
     matriz[l][c] = indice_novo
-    #print(f'Indice novo da cor nova: {indice_novo}')
     return matriz
 
 def seq(x):
     indice = sequencia.index(x)
     indice_new = indice + 1
-    #print(f'Indice da cor na lista de sequencia: {indice}')
     if indice_new > 4:
         indice_new = 0
     return sequencia[indice_new]
 
 
 sequencia = ['A', 'B', 'C', 'D', 'E']
-#l = []
-#c = []
+
 matriz = [['E', 'D', 'B'], 
           ['D', 'E', 'A'], 
           ['B', 'C', 'C']
@@ -67,16 +63,9 @@ print(f'{matriz[0]}')
 print(f'{matriz[1]}')
 print(f'{matriz[2]}')
 
-#print(matriz[0][0])
-#print(dici_matriz)
-
 for i in realizar_acao:
-    #print(i)
-    #print(dici_index_matriz[i])
     linha = dici_index_matriz[i][0]
     coluna = dici_index_matriz[i][1]
-    #print(linha)
-    #print(coluna)
     print('------------------------'*3)
     troca_cor(linha, coluna)
     print(f'Matriz modificada na célula {i}:')
